@@ -3,7 +3,11 @@ body {
     background-color: silver;
 }
 header {
-    text-align:center
+    text-align:center;
+}
+/* Klasse user im HTML definiert. durch .user hier hergenommen; durch img.user - alle user formatiert*/
+img.user {
+border-radius: 50%;
 }
 main {
     background-color: white;
@@ -18,5 +22,5 @@ article p {
     line-height: 1.3em;
 }
 a {
-    color:black
+    color:black;
 }
