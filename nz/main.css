@@ -1,7 +1,7 @@
 /* Stile für die Neuseelandreise */
 body {
     background-color: #eeeeee;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif; /*verschiedene Brauser erkennen versch. Schriftarten nicht --> Reihenfolge wird hier festgelegt - bis hin zu irgendeiner serifenfreien schrift (generisch) System sucht selber eine schrift aus*/
 }
 
 header {
