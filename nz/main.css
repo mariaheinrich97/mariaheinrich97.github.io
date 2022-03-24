@@ -6,6 +6,7 @@ body {
 header {
     text-align: center;
 }
+
 img.banner {
     width: 100%;
 }
@@ -30,6 +31,7 @@ article p {
     text-align: justify;
     line-height: 1.3em;
 }
+
 /* alle Bilder im Figrue*/
 article figure img {
     width: 100%;
@@ -44,10 +46,16 @@ footer {
     border-top: 1px solid black;
     padding: 1em 2em 3em 2em;
 }
+
 /* footer .back --> leerzeichen wichtig*/
 footer .back {
-float: left;
+    float: left;
 }
+
 footer .next {
     float: right;
+}
+
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
