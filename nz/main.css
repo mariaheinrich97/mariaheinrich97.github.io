@@ -30,6 +30,11 @@ article p {
     text-align: justify;
     line-height: 1.3em;
 }
+/* alle Bilder im Figrue*/
+article figure img {
+    width: 100%;
+
+}
 
 a {
     color: black;
