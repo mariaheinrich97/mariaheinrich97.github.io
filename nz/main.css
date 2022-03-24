@@ -13,4 +13,5 @@ article {
 }
 article p {
     text-align: justify;
+    line-height: 1.3em;
 }
