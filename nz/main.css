@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    text-align:center;
+    text-align: center;
 }
 
 /* Klasse user im HTML definiert. durch .user hier hergenommen; durch img.user - alle user formatiert*/
@@ -24,7 +24,7 @@ article {
 }
 
 article p {
-    text-align:justify;
+    text-align: justify;
     line-height: 1.3em;
 }
 
@@ -35,4 +35,11 @@ a {
 footer {
     border-top: 1px solid black;
     padding: 1em 2em 3em 2em;
+}
+/* footer .back --> leerzeichen wichtig*/
+footer .back {
+float: left;
+}
+footer .next {
+    float: right;
 }
