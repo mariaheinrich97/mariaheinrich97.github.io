@@ -6,6 +6,9 @@ body {
 header {
     text-align: center;
 }
+img.banner {
+    width: 100%;
+}
 
 /* Klasse user im HTML definiert. durch .user hier hergenommen; durch img.user - alle user formatiert*/
 img.user {
