@@ -15,3 +15,12 @@ article p {
     text-align: justify;
     line-height: 1.3em;
 }
+main a {
+    color:black
+}
+a:Visited {
+    color:rgba(0, 0, 255, 0.219)
+}
+a:hover {
+    color:aqua
+}
