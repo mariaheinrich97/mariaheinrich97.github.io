@@ -31,3 +31,7 @@ article p {
 a {
     color: black;
 }
+
+footer {
+    border-top: 1 px solid black;
+}
