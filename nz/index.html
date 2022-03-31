@@ -94,16 +94,24 @@
         </footer>
 
     </main>
-    <!--Leaflet Karte in der Website eingebaut -->
+    <!--Leaflet Karte in der Website eingebaut 
+    var = Variable
+map = 
+L. Leaflet - alles was LEaflet kann
+L.map - Leaflet kennt Methode, KArten zu machen
+'map'- zeigt, wo die Karte hin soll - (map nach var)
+. nächster Satz
+ausschnitt definieren (Koordinaten und Zoom-Faktor)
+-->
     <script>
-        var map = L.map('map').setView([-44.697222, 169.135278], 13);
+        var map = L.map('map').setView([-44.697222, 169.135278], 10);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         L.marker([-44.697222, 169.135278]).addTo(map)
-            .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+            .bindPopup('<h3>Wanaka</h3>')
             .openPopup();
     </script>
 
