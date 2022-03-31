@@ -94,15 +94,15 @@
         </footer>
 
     </main>
-    <!--Leaflet Karte in der Website eingebaut-->
+    <!--Leaflet Karte in der Website eingebaut -->
     <script>
-        var map = L.map('map').setView([51.505, -0.09], 13);
+        var map = L.map('map').setView([-44.697222, 169.135278], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([51.5, -0.09]).addTo(map)
+        L.marker([-44.697222, 169.135278]).addTo(map)
             .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
             .openPopup();
     </script>
@@ -110,3 +110,4 @@
 </body>
 
 </html>
+
