@@ -1,0 +1,2 @@
+/*Neuseelandreise Skript */
+// einzeiliger Kommentar
