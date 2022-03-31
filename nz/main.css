@@ -38,12 +38,14 @@ main {
     max-width: 1024px;
     margin: auto;
 }
+
 /* 100% breite füllt die ganze Seite - auch auf Handy gut zu sehen; 600px ist fix immer 600px hoch*/
 #map {
     width: 100%;
     height: 600px;
     border: 1px solid gray;
 }
+
 article {
     padding: 1em;
 }

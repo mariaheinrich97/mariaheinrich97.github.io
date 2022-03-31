@@ -21,6 +21,10 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
+
+    <!--Kartenskript einbauen-->
+    <script src="main.js"></script>
+    <!--command+Klick erstellt main.js, wenn noch nicht erstellt js = JavaSkript-->
 </head>
 
 <body>
@@ -103,19 +107,7 @@ L.map - Leaflet kennt Methode, KArten zu machen
 . nächster Satz
 ausschnitt definieren (Koordinaten und Zoom-Faktor)
 -->
-    <script>
-        var map = L.map('map').setView([-44.697222, 169.135278], 10);
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        L.marker([-44.697222, 169.135278]).addTo(map)
-            .bindPopup('<h3>Wanaka</h3>')
-            .openPopup();
-    </script>
 
 </body>
 
 </html>
-
