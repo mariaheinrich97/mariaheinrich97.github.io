@@ -3,11 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <!--Tab icon-Bild-->
+    <link rel="shotcut icon" href="images/user.jpg" type="image/jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuseelandreise</title>
     <link rel="stylesheet" href="main.css">
-    <!-- Stile einbauen -->
+
+    <!-- Font awesome (Style-Sheet) einbauen - Link aus dem Internet über cdnjs.com gedownloaded 
+    integrity: STellt sicher, das der Inhalt der datei genauso ist, wie die Checksumme besagt - kein Virus kann eingebaut werden
+    crossorigin/refarrerpolicy - vom Anbieter, nciht interessant für uns-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Leaflet-Bibliothek Links eingefügt-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!--Kartenskript einbauen-->
+    <script defer src="main.js"></script>
+    <!--command+Klick erstellt main.js, wenn noch nicht erstellt js = JavaSkript
+    defer: wird nicht sofort ausgeführt, sondern erst, wenn gesamter Code durchgegangen/die WEbsite aufgebaut wurde, ansonsten wird die Karte nicht angezeigt-->
 </head>
 
 <body>
@@ -52,10 +72,14 @@
 
             <figure>
                 <img src="images/attraction.jpg" alt="Einzelner Baum im See mit Bergkulisse">
-                <figcaption>Bild eines Sees mit einzelnem Baum und Berggruppe im Hintergrund. Bild: <a
+                <figcaption>Bild eines Sees mit einzelnem Baum und Berggruppe im Hintergrund. <i
+                        class="fa-solid fa-camera-retro"></i> <a
                         href="https://pixabay.com/de/photos/thatwanakatree-das-wanaka-baum-5928445/">EyriePhotography</a>
                 </figcaption>
             </figure>
+
+            <h3>Übersichtskarte</h3>
+            <div id="map"></div>
 
             <h4>Links</h4>
             <ul>
@@ -69,12 +93,23 @@
 
         <footer>
             <nav>
-                <a class="back" href="https://fabiigels.github.io/nz/index.html">🡰 vorhergehende Etappe</a>
-                <a class="next" href="https://stefangerer.github.io/nz/index.html">nächste Etappe 🡲</a>
+                <a class="back" href="https://fabiigels.github.io/nz/index.html"><i class="fa-solid fa-arrow-left"></i>
+                    vorhergehende Etappe</a>
+                <a class="next" href="https://stefangerer.github.io/nz/index.html">nächste Etappe <i
+                        class="fa-solid fa-arrow-right"></i></a>
             </nav>
         </footer>
-    </main>
 
+    </main>
+    <!--Leaflet Karte in der Website eingebaut 
+    var = Variable
+map = 
+L. Leaflet - alles was LEaflet kann
+L.map - Leaflet kennt Methode, KArten zu machen
+'map'- zeigt, wo die Karte hin soll - (map nach var)
+. nächster Satz
+ausschnitt definieren (Koordinaten und Zoom-Faktor)
+-->
 
 </body>
 
