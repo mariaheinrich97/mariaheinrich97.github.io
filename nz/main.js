@@ -69,7 +69,17 @@ for (let etappe of ETAPPEN) {
 }
 // HUTS
 for (let hut of HUTS) {
-    L.marker([hut.lat, hut.lng]).addTo(map)
-        .bindPopup(hut.name)
+
+    let popup =
+    `<h3>${hut.name}</h3>
+    <h4>Region: ${hut.region}</h4>
+    <hr> 
+    <p>${hut.info}<p>
+    <img src="${hut.image}" alt="Bild der Hütte ${hut.name}">
+    <hr> 
+    <a href="${hut.link}" target="Neuseeland">Link zur Hütte</a>
+    `
+    L.circleMarker([hut.lat, hut.lng]).addTo(map)
+        .bindPopup(popup)
         .openPopup();
 }
