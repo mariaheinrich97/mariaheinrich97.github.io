@@ -84,9 +84,10 @@ footer .next {
 }
 
 .etappenLink {
-    background: white border: 1px solid black;
+    background: white border: 1px solid  black;
     padding 0.5em;
     width: 2em;
-    text-align: center;
-    display: block;
+    text-align: center; 
+    margin-top: 2px;
+    display: inline-block;
 }
