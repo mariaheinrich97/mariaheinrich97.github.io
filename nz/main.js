@@ -39,8 +39,8 @@ let popup =
      <li> geogr. Breite: ${ETAPPEN[0].lat} </li>
      <li> <a href= "${ETAPPEN[0].wikipedia}">Link zur Wikipediaseite</a> </li>
      <li> <a href= "${ETAPPEN[0].github}">Link zur GitHub-Seite</a> </li>
-     </ul>`
-     ;
+     </ul>`;
+
 
 let map = L.map('map').setView(coords, zoom);
 
@@ -52,19 +52,24 @@ L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
     .openPopup();
 
-
-    for (let etappe of ETAPPEN) {
-        let popup =
-    `<h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
+//Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
+for (let etappe of ETAPPEN) {
+    let popup =
+        `<h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
      <ul>
      <li> geogr. Länge: ${etappe.lng}</li>
      <li> geogr. Breite: ${etappe.lat} </li>
      <li> <a href= "${etappe.wikipedia}">Link zur Wikipediaseite</a> </li>
      <li> <a href= "${etappe.github}.github.io/nz/">Link zur GitHub-Seite</a> </li>
-     </ul>`
-     ;
-        //console.log(etappe)
-        L.marker([etappe.lat, etappe.lng]).addTo(map)
-    .bindPopup(popup)
-    .openPopup();
-    }
+     </ul>`;
+    //console.log(etappe)
+    L.marker([etappe.lat, etappe.lng]).addTo(map)
+        .bindPopup(popup)
+        .openPopup();
+}
+// HUTS
+for (let hut of HUTS) {
+    L.marker([hut.lat, hut.lng]).addTo(map)
+        .bindPopup(hut.name)
+        .openPopup();
+}
