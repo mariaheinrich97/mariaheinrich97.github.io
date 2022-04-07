@@ -8,6 +8,7 @@ let lng = 169.135278;
 let zoom = 11;
 
 let coords = [-44.70, 175.65];
+
 console.log(coords)
 console.log(coords[0]) 
 console.log(coords[1]) 
@@ -21,6 +22,13 @@ console.log(coords.length)
  console.log('id="map"'); //Grund für unterschied ' & " - wenn ich im Ausdruck " oder ' verwenden möchte
  console.log(`text "Variablen" 'Auflösen' latitute = ${lat}`) // Backtips wichtig, da ich dann ' & " im Text verwenden kann und Variablen auflösen kann
  
+ let popup = 
+    `<h3>Wanaka</h3>
+     <ul>
+     <li> geogr. Länge: ${lng} </li>
+     <li> geogr. Breite: ${lat} </li>
+     </ul>`
+ 
 let map = L.map('map').setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,5 +37,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 L.marker([lat, lng]).addTo(map)
-    .bindPopup('<h3>Wanaka</h3>')
+    .bindPopup(popup)
     .openPopup();
