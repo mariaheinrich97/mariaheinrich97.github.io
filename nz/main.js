@@ -9,6 +9,7 @@ let zoom = 11;
 
 let coords = [-44.70, 175.65];
 
+/*
 console.log(coords)
 console.log(coords[0])
 console.log(coords[1])
@@ -29,6 +30,7 @@ console.log(ETAPPEN[0].titel)
 console.log(ETAPPEN[0].wikipedia)
 console.log(ETAPPEN[0].lat)
 console.log(ETAPPEN[0].lng)
+*/
 
 let popup =
     `<h3>${ETAPPEN[0].titel} (Etappe ${ETAPPEN[0].nr})</h3>
@@ -49,3 +51,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
     .openPopup();
+
+
+    for (let etappe of ETAPPEN) {
+        //console.log(etappe)
+        L.marker([etappe.lat, etappe.lng]).addTo(map)
+        .bindPopup(popup)
+    }
