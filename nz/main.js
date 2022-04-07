@@ -40,6 +40,7 @@ let popup =
      <li> <a href= "${ETAPPEN[0].wikipedia}">Link zur Wikipediaseite</a> </li>
      <li> <a href= "${ETAPPEN[0].github}">Link zur GitHub-Seite</a> </li>
      </ul>`
+     ;
 
 let map = L.map('map').setView(coords, zoom);
 
@@ -47,14 +48,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-
 L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
     .openPopup();
 
 
     for (let etappe of ETAPPEN) {
+        let popup =
+    `<h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
+     <ul>
+     <li> geogr. Länge: ${etappe.lng}</li>
+     <li> geogr. Breite: ${etappe.lat} </li>
+     <li> <a href= "${etappe.wikipedia}">Link zur Wikipediaseite</a> </li>
+     <li> <a href= "${etappe.github}.github.io/nz/">Link zur GitHub-Seite</a> </li>
+     </ul>`
+     ;
         //console.log(etappe)
         L.marker([etappe.lat, etappe.lng]).addTo(map)
-        .bindPopup(popup)
+    .bindPopup(popup)
+    .openPopup();
     }
