@@ -33,12 +33,12 @@ console.log(ETAPPEN[0].lng)
 */
 
 let popup =
-    `<h3>${ETAPPEN[0].titel} (Etappe ${ETAPPEN[0].nr})</h3>
+    `<h3>${ETAPPEN[7].titel} (Etappe ${ETAPPEN[0].nr})</h3>
      <ul>
-     <li> geogr. Länge: ${ETAPPEN[0].lng}</li>
-     <li> geogr. Breite: ${ETAPPEN[0].lat} </li>
-     <li> <a href= "${ETAPPEN[0].wikipedia}">Link zur Wikipediaseite</a> </li>
-     <li> <a href= "${ETAPPEN[0].github}">Link zur GitHub-Seite</a> </li>
+     <li> geogr. Länge: ${ETAPPEN[7].lng}</li>
+     <li> geogr. Breite: ${ETAPPEN[7].lat} </li>
+     <li> <a href= "${ETAPPEN[7].wikipedia}">Link zur Wikipediaseite</a> </li>
+     <li> <a href= "${ETAPPEN[7].github}">Link zur GitHub-Seite</a> </li>
      </ul>`;
 
 
@@ -70,7 +70,7 @@ for (let etappe of ETAPPEN) {
         //Etappennavigation erweitern - Link zu Etappen einfügen
         //document.querySelector verbindet zur html. Seite & sucht nach navigation
         // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
-        let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink">${etappe.nr}</a>`;
+        let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink"title="${etappe.titel}">${etappe.nr}</a>`;
         document.querySelector("#navigation").innerHTML += link;
 }
 // HUTS
