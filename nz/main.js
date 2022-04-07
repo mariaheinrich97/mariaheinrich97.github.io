@@ -67,17 +67,17 @@ for (let etappe of ETAPPEN) {
         .bindPopup(popup)
         .openPopup();
 
-        //Etappennavigation erweitern - Link zu Etappen einfügen
-        //document.querySelector verbindet zur html. Seite & sucht nach navigation
-        // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
-        let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
-        document.querySelector("#navigation").innerHTML += link;
+    //Etappennavigation erweitern - Link zu Etappen einfügen
+    //document.querySelector verbindet zur html. Seite & sucht nach navigation
+    // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
+    let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
+    document.querySelector("#navigation").innerHTML += link;
 }
 // HUTS
 for (let hut of HUTS) {
 
     let popup =
-    `<h3>${hut.name}</h3>
+        `<h3>${hut.name}</h3>
     <h4>Region: ${hut.region}</h4>
     <hr> 
     <p>${hut.info}<p>
