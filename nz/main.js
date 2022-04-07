@@ -68,6 +68,10 @@ for (let etappe of ETAPPEN) {
         .openPopup();
 
         //Etappennavigation erweitern - Link zu Etappen einfügen
+        //document.querySelector verbindet zur html. Seite & sucht nach navigation
+        // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
+        let link = `<a href= "https://${etappe.github}.github.io/nz/">${etappe.nr}</a>`;
+        document.querySelector("#navigation").innerHTML += link;
 }
 // HUTS
 for (let hut of HUTS) {
