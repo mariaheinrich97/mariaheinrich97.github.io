@@ -3,8 +3,8 @@
 
 // Variablen für Koordinaten vereinfachen Änderungen
 
-let lat = -44.697222;
-let lng = 169.135278;
+let lat = ETAPPEN[7].lat;
+let lng = ETAPPEN[7].lng;
 let zoom = 11;
 
 let coords = [-44.70, 175.65];
@@ -70,7 +70,7 @@ for (let etappe of ETAPPEN) {
         //Etappennavigation erweitern - Link zu Etappen einfügen
         //document.querySelector verbindet zur html. Seite & sucht nach navigation
         // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
-        let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink"title="${etappe.titel}">${etappe.nr}</a>`;
+        let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
         document.querySelector("#navigation").innerHTML += link;
 }
 // HUTS
