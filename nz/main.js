@@ -7,7 +7,7 @@ let lat = ETAPPEN[7].lat;
 let lng = ETAPPEN[7].lng;
 let zoom = 11;
 
-let coords = [-44.70, 175.65];
+let coords = [ETAPPEN[7].lng, ETAPPEN[7].lat];
 
 /*
 console.log(coords)
