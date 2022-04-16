@@ -1,22 +1,24 @@
 /* Stile für die Neuseelandreise */
 /* aus Google Font (Schriftstil) importiert - dadurch wird diese Schrift standardmäßig für alle Systeme verwendet*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Roboto:wght@100&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans:ital@0;1&family=Roboto:wght@300&display=swap');
 
 body {
     background-color: #eeeeee;
     font-family: 'Open Sans', sans-serif;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Monserrat';
+main p {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
 }
 
 main p {
-    font-family: 'Roboto';
+    font-family: 'Roboto' sans-serif;
 }
 
 header {
