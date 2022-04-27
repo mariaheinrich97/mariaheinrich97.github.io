@@ -50,7 +50,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 L.marker([lat, lng]).addTo(map)
     .bindPopup(popup)
-    .openPopup();
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 for (let etappe of ETAPPEN) {
