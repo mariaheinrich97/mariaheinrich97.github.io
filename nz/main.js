@@ -86,5 +86,4 @@ for (let hut of HUTS) {
     `
     L.circleMarker([hut.lat, hut.lng]).addTo(map)
         .bindPopup(popup)
-        .openPopup();
 }
