@@ -65,7 +65,6 @@ for (let etappe of ETAPPEN) {
     //console.log(etappe)
     L.marker([etappe.lat, etappe.lng]).addTo(map)
         .bindPopup(popup)
-        .openPopup();
 
     //Etappennavigation erweitern - Link zu Etappen einfügen
     //document.querySelector verbindet zur html. Seite & sucht nach navigation
