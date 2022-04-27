@@ -49,8 +49,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 L.marker([lat, lng]).addTo(map)
-.bindPopup(popup)
-.openPopup();
+    .bindPopup(popup)
+    .openPopup();
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 for (let etappe of ETAPPEN) {
@@ -65,6 +65,7 @@ for (let etappe of ETAPPEN) {
     //console.log(etappe)
     L.marker([etappe.lat, etappe.lng]).addTo(map)
         .bindPopup(popup)
+        .openPopup();
 
     //Etappennavigation erweitern - Link zu Etappen einfügen
     //document.querySelector verbindet zur html. Seite & sucht nach navigation
@@ -86,4 +87,5 @@ for (let hut of HUTS) {
     `
     L.circleMarker([hut.lat, hut.lng]).addTo(map)
         .bindPopup(popup)
+        .openPopup();
 }
