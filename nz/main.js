@@ -47,15 +47,15 @@ for (let etappe of ETAPPEN) {
      <li> <a href= "${etappe.github}.github.io/nz/">Link zur GitHub-Seite</a> </li>
      </ul>`;
     //console.log(etappe)
-   let navClass = "etappenLink";
-   
-    let mrk =  L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
-   if (etappe.nr == 6) {
-       mrk.openPopup();
-       navClass = "etappenLink etappeAktuell"
-   }
+    let navClass = "etappenLink";
 
-   // = Zuweisung == abfrage, ob etwas Gleich ist, wie ... 
+    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+    if (etappe.nr == 6) {
+        mrk.openPopup();
+        navClass = "etappenLink etappeAktuell"
+    }
+
+    // = Zuweisung == abfrage, ob etwas Gleich ist, wie ... 
     //Etappennavigation erweitern - Link zu Etappen einfügen
     //document.querySelector verbindet zur html. Seite & sucht nach navigation
     // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
@@ -76,6 +76,19 @@ for (let hut of HUTS) {
     <hr> 
     <a href="${hut.link}" target="Neuseeland">Link zur Hütte</a>
     `
-    L.circleMarker([hut.lat, hut.lng]).addTo(map)
+
+    let statusColor;
+    if (hut.open == true) {
+        statusColor = "green";
+    } else {
+        statusColor = "red";
+    }
+    L.circleMarker([hut.lat, hut.lng], {
+            color: statusColor
+        }).addTo(map)
         .bindPopup(popup)
 }
+
+
+//keine ; da im Optionen-Objekt
+// ${} nur im ""
