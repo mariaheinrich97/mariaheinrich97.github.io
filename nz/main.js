@@ -1,10 +1,6 @@
-/*Neuseelandreise Skript */
+/* mehrzeiliger Kommentar */
 // einzeiliger Kommentar
 
-// Variablen für Koordinaten vereinfachen Änderungen
-
-let lat = ETAPPEN[7].lat;
-let lng = ETAPPEN[7].lng;
 let zoom = 11;
 
 let coords = [ETAPPEN[7].lng, ETAPPEN[7].lat];
@@ -32,25 +28,12 @@ console.log(ETAPPEN[0].lat)
 console.log(ETAPPEN[0].lng)
 */
 
-let popup =
-    `<h3>${ETAPPEN[7].titel} (Etappe ${ETAPPEN[0].nr})</h3>
-     <ul>
-     <li> geogr. Länge: ${ETAPPEN[7].lng}</li>
-     <li> geogr. Breite: ${ETAPPEN[7].lat} </li>
-     <li> <a href= "${ETAPPEN[7].wikipedia}">Link zur Wikipediaseite</a> </li>
-     <li> <a href= "${ETAPPEN[7].github}">Link zur GitHub-Seite</a> </li>
-     </ul>`;
-
 
 let map = L.map('map').setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-L.marker([lat, lng]).addTo(map)
-    .bindPopup(popup)
-    .openPopup();
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 for (let etappe of ETAPPEN) {
