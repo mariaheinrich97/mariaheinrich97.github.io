@@ -3,7 +3,7 @@
 
 let zoom = 11;
 
-let coords = [ETAPPEN[7].lng, ETAPPEN[7].lat];
+let coords = [ETAPPEN[6].lat, ETAPPEN[6].lng];
 
 /*
 console.log(coords)
@@ -36,6 +36,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
+
 for (let etappe of ETAPPEN) {
     let popup =
         `<h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
@@ -52,6 +53,7 @@ for (let etappe of ETAPPEN) {
     //Etappennavigation erweitern - Link zu Etappen einfügen
     //document.querySelector verbindet zur html. Seite & sucht nach navigation
     // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
+    
     let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
     document.querySelector("#navigation").innerHTML += link;
 }
