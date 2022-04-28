@@ -47,9 +47,12 @@ for (let etappe of ETAPPEN) {
      <li> <a href= "${etappe.github}.github.io/nz/">Link zur GitHub-Seite</a> </li>
      </ul>`;
     //console.log(etappe)
-   let mrk =  L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+   let navClass = "etappenLink";
+   
+    let mrk =  L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
    if (etappe.nr == 6) {
        mrk.openPopup();
+       navClass = "etappenLink etappeAktuell"
    }
 
    // = Zuweisung == abfrage, ob etwas Gleich ist, wie ... 
@@ -57,7 +60,8 @@ for (let etappe of ETAPPEN) {
     //document.querySelector verbindet zur html. Seite & sucht nach navigation
     // innerHTML sucht innerhalb von HTML und setzt ihn ="xy" --> xy steht unter der Karte 
 
-    let link = `<a href= "https://${etappe.github}.github.io/nz/"class="etappenLink" title="${etappe.titel}">${etappe.nr}</a>`;
+    let link = `<a href= "https://${etappe.github}.github.io/nz/"
+    class="${navClass} " title="${etappe.titel}">${etappe.nr}</a>`;
     document.querySelector("#navigation").innerHTML += link;
 }
 // HUTS
