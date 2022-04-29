@@ -28,12 +28,36 @@ console.log(ETAPPEN[0].lat)
 console.log(ETAPPEN[0].lng)
 */
 
+let startLayer = L.tileLayer.provider("BasemapAT.grau")
 
-let map = L.map('map').setView(coords, zoom);
+let map = L.map('map', {
+    center: [coords],
+    zoom: zoom,
+    layers: [
+        startLayer
+    ]
+}).setView(coords, zoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+// verschiedene Layermöglichkeiten einräumen
+let layerControl = L.control.layers({
+    "BasemapAT Grau": startLayer,
+    "BasemapAT Standard": L.tileLayer.provider("BasemapAT.basemap"),
+    "BasemapAT Beschriftung": L.tileLayer.provider("BasemapAT.overlay"),
+    "BasemapAT Gelände": L.tileLayer.provider("BasemapAT.terrain"),
+    "BasemapAT Oberfläche": L.tileLayer.provider("BasemapAT.surface"),
+    "BasemapAT High-DPI": L.tileLayer.provider("BasemapAT.highdpi"),
+    "BasemapAT Orthofoto": L.tileLayer.provider("BasemapAT.orthofoto"),
+    "Basemap mit Orthofoto und Beschriftung": L.layerGroup([
+        L.tileLayer.provider("BasemapAT.orthofoto"),
+        L.tileLayer.provider("BasemapAT.overlay"),
+    ])
+}).addTo(map);
+
+layerControl.expand();
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 
