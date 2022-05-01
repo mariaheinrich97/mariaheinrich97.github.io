@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-        <!--Leaflet-Bibliothek Links eingefügt-->
+
+    <!--Leaflet-Bibliothek Links eingefügt-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -36,19 +36,24 @@
     <!--command+Klick erstellt main.js, wenn noch nicht erstellt js = JavaSkript
     defer: wird nicht sofort ausgeführt, sondern erst, wenn gesamter Code durchgegangen/die WEbsite aufgebaut wurde, ansonsten wird die Karte nicht angezeigt-->
 
- <!-- Leaflet minimap plugin-->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
- integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
- crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"
- integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
- crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Leaflet providers (versch. Karten) Plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+        integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Leaflet minimap plugin-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
+        integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"
+        integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<!-- Leaflet scale/fullscreen plugin -->
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
-    rel='stylesheet' />
+    <!-- Leaflet scale/fullscreen plugin -->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
 
 </head>
 
@@ -70,17 +75,24 @@
 
             <h3>Geographie</h3>
             <p>Wanaka befindet sich rund 50 km nordöstlich von Queenstown (70 Straßenkilometer) und gut 40 km nördlich
-            von Cromwell am südlichen Ende des Lake Wanaka. Der Ort umschließt die Roys Bay des Sees. In Wanaka endet
-            der nur 3 km lange New Zealand State Highway 84, der den Ort an den New Zealand State Highway 6 anbindet,
-            über den Wanaka mit Haast im Norden an der Westküste und im Süden mit Cromwell verbindet. (Quelle: <a href="https://de.wikipedia.org/wiki/Wanaka">Wikipedia - Wanaka</a>) </p>
+                von Cromwell am südlichen Ende des Lake Wanaka. Der Ort umschließt die Roys Bay des Sees. In Wanaka
+                endet
+                der nur 3 km lange New Zealand State Highway 84, der den Ort an den New Zealand State Highway 6
+                anbindet,
+                über den Wanaka mit Haast im Norden an der Westküste und im Süden mit Cromwell verbindet. (Quelle: <a
+                    href="https://de.wikipedia.org/wiki/Wanaka">Wikipedia - Wanaka</a>) </p>
 
             <h3>Sehenswürdigkeiten</h3>
             <p><em>Puzzling World,</em> eine touristische Attraktion mit einem zweistöckigen Labyrinth errichtet von
-            Stuart Landsborough. <em>National Transport and Toy Museum,</em> in dem viele alte Autos besichtigt werden können.
-            <em>New Zealand Fighter Pilots Museum,</em> mit einer der größten Sammlung von Kampfflugzeugen in
-            Neuseeland. <em>Cinema Paradiso,</em> in dem Sofas und ein altes Cabrio als Kinositze dienen. Die <em>Berge</em> und <em>Seen</em> rund um Wanaka und Queenstown, die als Kulisse für einige Szenen
-            aus der Trilogie Herr der Ringe und dem Film Der Hobbit dienten. Warbird over Wanaka, Flugschau mit historischen Flugzeugen, die alle zwei Jahre in Wanaka veranstaltet
-            wird. 20 km südlich der Stadt befindet sich der <em>BH-Zaun von Cardrona</em>. (Quelle: <a href="https://de.wikipedia.org/wiki/Wanaka">Wikipedia - Wanaka</a>)</p>
+                Stuart Landsborough. <em>National Transport and Toy Museum,</em> in dem viele alte Autos besichtigt
+                werden können.
+                <em>New Zealand Fighter Pilots Museum,</em> mit einer der größten Sammlung von Kampfflugzeugen in
+                Neuseeland. <em>Cinema Paradiso,</em> in dem Sofas und ein altes Cabrio als Kinositze dienen. Die
+                <em>Berge</em> und <em>Seen</em> rund um Wanaka und Queenstown, die als Kulisse für einige Szenen
+                aus der Trilogie Herr der Ringe und dem Film Der Hobbit dienten. Warbird over Wanaka, Flugschau mit
+                historischen Flugzeugen, die alle zwei Jahre in Wanaka veranstaltet
+                wird. 20 km südlich der Stadt befindet sich der <em>BH-Zaun von Cardrona</em>. (Quelle: <a
+                    href="https://de.wikipedia.org/wiki/Wanaka">Wikipedia - Wanaka</a>)</p>
 
             <figure>
                 <img src="images/attraction.jpg" alt="Einzelner Baum im See mit Bergkulisse">
