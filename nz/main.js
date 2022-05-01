@@ -93,9 +93,13 @@ for (let hut of HUTS) {
 
 // miniMap = Übersichtskarte
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer.provider("BasemapAT"),
+    L.tileLayer.provider("Esri.WorldStreetMap"),
 ).addTo(map);
 
-//keine ; da im Optionen-Objekt
-// ${} nur im ""
+// Maßstab hinzufügen
+L.control.scale({
+    imperial: false,
+}).addTo(map);
+
+
 
