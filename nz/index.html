@@ -1,4 +1,11 @@
 <!-- Kommentar -->
+
+<!-- WEBSITES
+Full-Screen: https://github.com/Leaflet/
+Kartenskript einbauen: https://cdnjs.com/
+Karten Erhalten: https://leaflet-extras.github.io/leaflet-providers/preview/
+Scale etc. https://leafletjs.com/reference.html
+-->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -12,13 +19,13 @@
     <link rel="stylesheet" href="main.css">
 
     <!-- Font awesome (Style-Sheet) einbauen - Link aus dem Internet über cdnjs.com gedownloaded 
-    integrity: STellt sicher, das der Inhalt der datei genauso ist, wie die Checksumme besagt - kein Virus kann eingebaut werden
+    integrity: stellt sicher, das der Inhalt der Datei genauso ist, wie die Checksumme besagt - kein Virus kann eingebaut werden
     crossorigin/refarrerpolicy - vom Anbieter, nciht interessant für uns-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!--Leaflet-Bibliothek Links eingefügt-->
+    <!--Leaflet-Bibliothek Links für CSS-Styles eingefügt-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
         crossorigin="" />
@@ -26,22 +33,22 @@
         integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
         crossorigin=""></script>
 
-    <!--Etappen-Objekt-->
-    <script src="etappen.js"></script>
-    <!--DOC Hütten-->
-    <script src="huts.js"></script>
-
     <!--Kartenskript einbauen-->
     <script defer src="main.js"></script>
     <!--command+Klick erstellt main.js, wenn noch nicht erstellt js = JavaSkript
     defer: wird nicht sofort ausgeführt, sondern erst, wenn gesamter Code durchgegangen/die WEbsite aufgebaut wurde, ansonsten wird die Karte nicht angezeigt-->
 
-<!-- Leaflet providers (versch. Karten) Plugin https://cdnjs.com/libraries/leaflet-providers-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
+    <!-- Leaflet providers (versch. Karten) Plugin https://cdnjs.com/ SUCHE: "leaflet-providers"-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.13.0/leaflet-providers.min.js"
         integrity="sha512-5EYsvqNbFZ8HX60keFbe56Wr0Mq5J1RrA0KdVcfGDhnjnzIRsDrT/S3cxdzpVN2NGxAB9omgqnlh4/06TvWCMw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Leaflet minimap plugin-->
+    <!--Etappen-Objekt-->
+    <script src="etappen.js"></script>
+    <!--DOC Hütten-->
+    <script src="huts.js"></script>
+
+    <!-- Leaflet MINIMAP plugin aus https://cdnjs.com/libraries/leaflet-minimap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.js"
         integrity="sha512-WL3nAJlWFKoDShduxQRyY3wkBnQsINXdIfWIW48ZaPgYz1wYNnxIwFMMgigzSgjNBC2WWZ8Y8/sSyUU6abuF0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -49,11 +56,13 @@
         integrity="sha512-efbAfGnrnjA+hLwOLu91W034fBGPsMwZMVCTwLUI2PDX/m7rOiuhYZ+D2mZ8rKcpC/I/7pdgoL8T4eYvMHNoQg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-    <!-- Leaflet scale/fullscreen plugin -->
+    <!-- Leaflet fullscreen plugin aus https://github.com/Leaflet/Leaflet.fullscreen -->
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />
+
+
+
 
 </head>
 

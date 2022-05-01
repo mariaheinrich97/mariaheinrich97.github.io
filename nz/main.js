@@ -1,28 +1,23 @@
 /* mehrzeiliger Kommentar */
 // einzeiliger Kommentar
 let zoom = 11;
-
 let coords = [ETAPPEN[6].lat, ETAPPEN[6].lng];
-
-// funktionierender Layer (ohne Leaflet Plugin)
 let map = L.map('map').setView(coords, zoom);
 
+// Zugriff auf Leaflet provider plugin
 let startLayer = L.tileLayer.provider("Esri.WorldStreetMap").addTo(map);
-   /* let startLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);*/
-
+// Erstellen verschiedener Layer
 let layerControl = L.control.layers({
-    "WorldStreetMap": startLayer, 
+    "WorldStreetMap": startLayer,
     "OceanBasemap": L.tileLayer.provider("Esri.OceanBasemap"),
     "WorldImagery)": L.tileLayer.provider("Esri.WorldImagery"),
-}).addTo(map); 
+}).addTo(map);
 
-/*damit control gleich schon ausgerollt ist*/
+// LayerControl wird sofort ausgeklappt, statt durch Klick
 layerControl.expand();
 
-//Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
-
+// ETAPPEN einfügen aus Arrey etappen.js - auch im INDEX.HTML vernetzen
+// Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 for (let etappe of ETAPPEN) {
     let popup =
         `<h3>${etappe.titel} (Etappe ${etappe.nr})</h3>
@@ -49,7 +44,8 @@ for (let etappe of ETAPPEN) {
     class="${navClass} " title="${etappe.titel}">${etappe.nr}</a>`;
     document.querySelector("#navigation").innerHTML += link;
 }
-// HUTS einfügen 
+
+// HUTS einfügen aus Arrey huts.js - auch im INDEX.HTML vernetzen
 for (let hut of HUTS) {
 
     let popup =
@@ -75,19 +71,16 @@ for (let hut of HUTS) {
         .bindPopup(popup)
 }
 
-// miniMap = Übersichtskarte
+// MINIMAP = Übersichtskarte mit Karte aus Leaflet - Provider
 let miniMap = new L.Control.MiniMap(
-   /* L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }),*/
     L.tileLayer.provider("Esri.WorldStreetMap")
 ).addTo(map);
 
-// Maßstab hinzufügen
+// SCALE hinzufügen (nicht imperial = metrisch)
 L.control.scale({
     imperial: false,
 }).addTo(map);
 
-// Scale z. B. für Smartphones gut
+// FULLSCREEN z. B. für Smartphones gut
 L.control.fullscreen().addTo(map);
 // map.addControl(L.control.fullscreen());
