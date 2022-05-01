@@ -91,6 +91,11 @@ for (let hut of HUTS) {
 }
 
 
+// miniMap = Übersichtskarte
+let miniMap = new L.Control.MiniMap(
+    L.tileLayer.provider("BasemapAT"),
+).addTo(map);
+
 //keine ; da im Optionen-Objekt
 // ${} nur im ""
 
