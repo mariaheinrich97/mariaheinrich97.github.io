@@ -6,6 +6,7 @@ let coords = [ETAPPEN[6].lat, ETAPPEN[6].lng];
 
 let map = L.map('map').setView(coords, zoom);
 
+// funktionierender Layer (ohne Leaflet Plugin)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
