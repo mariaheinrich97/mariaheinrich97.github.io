@@ -28,12 +28,35 @@ console.log(ETAPPEN[0].lat)
 console.log(ETAPPEN[0].lng)
 */
 
-
-let map = L.map('map').setView(coords, zoom);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+/*let startLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);*/
+
+let startLayer = L.tileLayer.provider("Esri.WorldStreetMap");
+
+let map = L.map("map", {
+    center: [coords],
+    zoom: 12,
+    layers: [
+        startLayer
+    ]
+})
+//Layer einbinden
+
+let layerControl = L.control.layers({
+    "WorldStreetMap": startLayer,
+    "WorldTopoMap": L.tileLayer.provider ("Esri.WorldTopoMap"),
 }).addTo(map);
+
+layerControl.expand();
+
+let sightLayer = L.featureGroup();
+
+layerControl.addOverlay(sightLayer, "Hütteln & Etappen");
+
+let mrk = L.marker([coords]).addTo(sightLayer);
+
+sightLayer.addTo(map);
 
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 
@@ -49,7 +72,7 @@ for (let etappe of ETAPPEN) {
     //console.log(etappe)
     let navClass = "etappenLink";
 
-    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
+    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(sightLayer).bindPopup(popup);
     if (etappe.nr == 6) {
         mrk.openPopup();
         navClass = "etappenLink etappeAktuell"
@@ -86,10 +109,9 @@ for (let hut of HUTS) {
     L.circleMarker([hut.lat, hut.lng], {
             color: statusColor,
             radius: 5
-        }).addTo(map)
+        }).addTo(sightLayer)
         .bindPopup(popup)
 }
-
 
 //keine ; da im Optionen-Objekt
 // ${} nur im ""
