@@ -1,33 +1,8 @@
 /* mehrzeiliger Kommentar */
 // einzeiliger Kommentar
-
 let zoom = 11;
 
 let coords = [ETAPPEN[6].lat, ETAPPEN[6].lng];
-
-/*
-console.log(coords)
-console.log(coords[0])
-console.log(coords[1])
-console.log(coords.length)
-//arrey hat immer versch. / mehrere Elemente und steht in [] 
-//console.log() steht im Reiter unten
-//Wert 1 in der Reihe = 0
-
-console.log('text');
-console.log("text");
-console.log('id="map"'); //Grund für unterschied ' & " - wenn ich im Ausdruck " oder ' verwenden möchte
-console.log(`text "Variablen" 'Auflösen' latitute = ${lat}`) // Backtips wichtig, da ich dann ' & " im Text verwenden kann und Variablen auflösen kann
-console.log(ETAPPEN);
-console.log(ETAPPEN[0]);
-console.log(ETAPPEN[0].nr)
-console.log(ETAPPEN[0].github)
-console.log(ETAPPEN[0].titel)
-console.log(ETAPPEN[0].wikipedia)
-console.log(ETAPPEN[0].lat)
-console.log(ETAPPEN[0].lng)
-*/
-
 
 let map = L.map('map').setView(coords, zoom);
 
