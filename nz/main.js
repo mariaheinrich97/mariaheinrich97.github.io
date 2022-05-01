@@ -4,32 +4,12 @@ let zoom = 11;
 
 let coords = [ETAPPEN[6].lat, ETAPPEN[6].lng];
 
-// Karte einbinden ANFANG
+let map = L.map('map').setView(coords, zoom);
 
-
-let startLayer = l.tileLayer.provider("Esri.WorldStreetMap");
-//let map = L.map('map').setView(coords, zoom);
-let map = L.map("map", {
-    center: coords,
-    zoom: zoom,
-    layers: [
-        startLayer
-    ]
-})
-
-let layerControl = L.control.layers({
-    "Esri.WorldStreetMap": startLayer,
-    "Esri.WorldTopoMap": L.tileLayer.provider("Esri.WorldTopoMap"),
-    "Esri.WorldImagery": L.tileLayer.provider("Esri.WorldImagery"),
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-layerControl.expand();
-
-let sightLayer = L.featureGroup();
-
-layerControl.addOverlay(sightLayer, "Hütten & Etappen");
-
-// ETAPPEN FÄHNCHEN
 //Arrey in etappen.js für Labeling und Informationen der einzelnen Etappen, die hier aufgerufen werden können und die Label werden in einer for-Schleife abgerufen
 
 for (let etappe of ETAPPEN) {
@@ -44,7 +24,7 @@ for (let etappe of ETAPPEN) {
     //console.log(etappe)
     let navClass = "etappenLink";
 
-    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(sightLayer).bindPopup(popup);
+    let mrk = L.marker([etappe.lat, etappe.lng]).addTo(map).bindPopup(popup);
     if (etappe.nr == 6) {
         mrk.openPopup();
         navClass = "etappenLink etappeAktuell"
@@ -59,8 +39,7 @@ for (let etappe of ETAPPEN) {
     class="${navClass} " title="${etappe.titel}">${etappe.nr}</a>`;
     document.querySelector("#navigation").innerHTML += link;
 }
-
-// HUTS FÄHNCHEN
+// HUTS einfügen 
 for (let hut of HUTS) {
 
     let popup =
@@ -82,19 +61,9 @@ for (let hut of HUTS) {
     L.circleMarker([hut.lat, hut.lng], {
             color: statusColor,
             radius: 5
-        }).addTo(sightLayer)
+        }).addTo(map)
         .bindPopup(popup)
 }
-
-let mrk = L.marker([coords]).addTo(sightLayer);
-
-sightLayer.addTo(map);
-
-/*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);*/
-
-//Karte einbinden ENDE
 
 
 // miniMap = Übersichtskarte
