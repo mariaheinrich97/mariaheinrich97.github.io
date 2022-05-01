@@ -93,7 +93,9 @@ for (let hut of HUTS) {
 
 // miniMap = Übersichtskarte
 let miniMap = new L.Control.MiniMap(
-    L.tileLayer.provider("Esri.WorldStreetMap"),
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
 ).addTo(map);
 
 // Maßstab hinzufügen
