@@ -39,7 +39,7 @@ for (let etappe of ETAPPEN) {
     class="${navClass} " title="${etappe.titel}">${etappe.nr}</a>`;
     document.querySelector("#navigation").innerHTML += link;
 }
-// HUTS
+// HUTS einfügen 
 for (let hut of HUTS) {
 
     let popup =
